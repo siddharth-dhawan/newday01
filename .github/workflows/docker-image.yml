@@ -1,0 +1,22 @@
+name: Docker Image CI
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        login-server: 'inteltrainingacr01.azurecr.io' # default: index.docker.io
+        username: 'inteltrainingacr01'
+        password: 'gK4eDUg=Tal8q8oTpvVlOvTHUDkXCV6o'
+    - name: Build the Docker image
+      run: docker build . --file Dockerfile --tag inteltrainingacr01.azurecr.io/newday01:1
