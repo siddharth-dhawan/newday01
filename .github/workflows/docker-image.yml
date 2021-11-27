@@ -54,4 +54,5 @@ jobs:
             --wait \
             --namespace default \
             newday01 \
+            newday01 \
             --set image.repository=${{ secrets.ACR_NAME }} \
