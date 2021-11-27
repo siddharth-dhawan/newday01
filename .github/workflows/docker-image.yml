@@ -54,5 +54,4 @@ jobs:
             --wait \
             --namespace default \
             newday01 \
-            ./siddharth-dhawan/newday01 \
             --set image.repository=${{ secrets.ACR_NAME }} \
