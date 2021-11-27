@@ -51,5 +51,5 @@ jobs:
             --atomic \
             --wait \
             --namespace default \
-            newday01 \
-            ./kubernetes/newdayo1-app \
+            newday01-app \
+            ./helm/newdayo1-api \
