@@ -45,5 +45,8 @@ jobs:
     # ... File omitted
     - name: Run Helm Deploy
         helm repo add newday01 https://github.com/siddharth-dhawan/newday01/blob/master/helm/newday01-api
-      run: |
-          helm upgrade newday01 newday01
+      run: >
+        helm upgrade 
+        --install newday01
+        --namespace=default 
+        --set protocol=http './deploy/k8s/helm-simple/coupon'
