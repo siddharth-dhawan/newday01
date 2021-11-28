@@ -44,7 +44,7 @@ jobs:
         cluster-name: sidlabaks01
     # ... File omitted
     - name: Run Helm Deploy
-        helm repo add newday01-api https://github.com/siddharth-dhawan/newday01/blob/master/helm
+        helm repo add newday01-api https://github.com/siddharth-dhawan/newday01/tree/master/helm/newday01-api
         helm repo update
       run: >
-        helm upgrade --install newday01-api newday01-api
+        helm upgrade --install newday01-api newday01-api --repo=newday01-api
