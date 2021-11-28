@@ -37,16 +37,16 @@ spec:
           volumeMounts:
           - name: log-volume
             mountPath: /opt/apps/{{ .Values.app.name }}/logs
-          - name: config-volume
-            mountPath: /script/start.sh
-            subPath: start.sh
+          # - name: config-volume
+          #   mountPath: /script/start.sh
+          #   subPath: start.sh
 
       volumes:
       - name: log-volume
         persistentVolumeClaim:
           claimName: {{ .Values.pvc.name }}
-      - name: config-volume
-        configMap:
-          name: {{ .Values.app.name }}-configmap
-          defaultMode: 0755 #Giving permissions to config map script
+      # - name: config-volume
+      #   configMap:
+      #     name: {{ .Values.app.name }}-configmap
+      #     defaultMode: 0755 #Giving permissions to config map script
       restartPolicy: Always
