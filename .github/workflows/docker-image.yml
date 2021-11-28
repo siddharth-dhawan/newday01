@@ -52,4 +52,4 @@ jobs:
             --wait \
             --namespace default \
             newday01-app \
-            ./helm/newdayo1-api \
+            ./newday01/helm/newdayo1-api \
