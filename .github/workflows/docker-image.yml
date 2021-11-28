@@ -48,4 +48,6 @@ jobs:
         helm repo update
       run: >
         helm repo add grafana https://grafana.github.io/helm-charts
-        helm repo update
+    - name: Update Helm
+      run: >
+       helm repo update
