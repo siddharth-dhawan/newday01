@@ -54,4 +54,4 @@ jobs:
             --wait \
             --namespace default \
             newday01-app \
-            https://github.com/siddharth-dhawan/newday01/blob/master/helm/newday01-api \
+            --protocol https://github.com/siddharth-dhawan/newday01/blob/master/helm/newday01-api \
