@@ -45,5 +45,5 @@ jobs:
     # ... File omitted
     - name: Run Helm Deploy
         helm repo add newday01-api https://github.com/siddharth-dhawan/newday01/blob/master/helm
-      run: >
-        helm upgrade --repo newday01-api --install newday01-api newday01-api
+#       run: >
+#         helm upgrade --repo newday01-api --install newday01-api newday01-api
