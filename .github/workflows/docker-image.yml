@@ -48,4 +48,3 @@ jobs:
         helm repo update
       run: >
         helm repo list
-        helm upgrade --install newday01-api newday01-api --repo=newday01-api
