@@ -47,3 +47,22 @@ jobs:
         helm repo add newday01-api https://github.com/siddharth-dhawan/newday01/blob/master/helm
       run: >
         helm ls
+        
+    - name: Helm Upgrade Action
+        helm repo add newday01-api https://github.com/siddharth-dhawan/newday01/blob/master/helm
+      # You may pin to the exact commit or the version.
+      # uses: arielvinas/helm@556a2b3b602f3a81568f828af5626df63084839d
+      uses: arielvinas/helm@v1.0
+      with:
+        # Helm release name. Will be combined with track if set. (required)
+        release: newday01-api
+        # Kubernetes namespace name. (required)
+        namespace: default
+        # Helm chart path. If set to "app" this will use the built in helm chart found in this repository. (required)
+        chart: app
+        # If true, upgrade process rolls back changes made in case of failed upgrade. Defaults to true.
+        atomic: true
+        # Helm repository alias that will be used.
+        repo-alias: newday01-api
+        # Helm chart repository to be added.
+        repo: newday01-api
