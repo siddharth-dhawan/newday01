@@ -47,4 +47,5 @@ jobs:
         helm repo add grafana https://grafana.github.io/helm-charts
         helm repo update
       run: >
-        helm repo list
+        helm repo add grafana https://grafana.github.io/helm-charts
+        helm repo update
