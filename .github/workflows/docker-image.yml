@@ -43,8 +43,11 @@ jobs:
         # AKS Cluster Name
         cluster-name: sidlabaks01
     # ... File omitted
-    - name: Run Helm Deploy
-        helm repo add newday01-api https://github.com/siddharth-dhawan/newday01/tree/master/helm/newday01-api
-        helm repo update
-      run: >
-        helm repo list
+    - name: AKS Deployment
+      run:
+        kubectl apply -f deployment.yaml
+    - name: AKS Service
+      run:
+        kubectl apply -f service.yaml
+        
+      
