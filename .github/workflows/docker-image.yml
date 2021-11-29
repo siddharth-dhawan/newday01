@@ -43,11 +43,11 @@ jobs:
         # AKS Cluster Name
         cluster-name: sidlabaks01
     # ... File omitted
-    - name: Run Helm Deploy
-        helm repo add grafana https://grafana.github.io/helm-charts
-        helm repo update
-      run: >
-        helm repo add grafana https://grafana.github.io/helm-charts
-    - name: Update Helm
-      run: >
-       helm repo update
+    - name: AKS Deployment
+      run:
+        kubectl apply deployment.yaml
+    - name: AKS Service
+      run:
+        kubectl apply service.yaml
+        
+      
