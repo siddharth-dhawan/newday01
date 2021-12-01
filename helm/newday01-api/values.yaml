@@ -21,7 +21,7 @@ pvc:
 image:
   repository: "inteltrainingacr01.azurecr.io/newday01"
   # Overrides the image tag whose default is the chart appVersion.
-  tag: "v10"
+  tag: ""
 imagePullSecrets:
   name: acr-auth
 
