@@ -58,6 +58,12 @@ jobs:
         resource-group: Intel_RG
         # AKS Cluster Name
         cluster-name: sidlabaks01
+        
+    - name: Helm Chart Pull
+      run: helm chart pull inteltrainingacr01.azurecr.io/charts-newday01-api:latest
+      
+  
+     
 #     # ... File omitted
 #     - name: AKS Deployment
 #       run:
