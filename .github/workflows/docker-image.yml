@@ -18,17 +18,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Azure Container Registry Login
-      uses: actions/checkout@v2
-      with:
-        login-server: 'inteltrainingacr01.azurecr.io' # default: index.docker.io
-        username: 'inteltrainingacr01'
-        password: 'gK4eDUg=Tal8q8oTpvVlOvTHUDkXCV6o'
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag inteltrainingacr01.azurecr.io/newday01:5
       
     - name: Azure Container Registry Login  
-      uses: actions/checkout@v2
+      uses: Azure/docker-login@v1
       with:
         login-server: 'inteltrainingacr01.azurecr.io' # default: index.docker.io
         username: 'inteltrainingacr01'
