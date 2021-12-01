@@ -59,6 +59,15 @@ jobs:
         # AKS Cluster Name
         cluster-name: sidlabaks01
     
+    - name: Helm tool installer
+      uses: Azure/setup-helm@v1
+      with:
+        # Version of helm
+        version: 3.3.1
+    - name: login to acr using helm
+      run: |
+        echo $ | helm registry login inteltrainingacr01.azurecr.io --username inteltrainingacr01 --password gK4eDUg=Tal8q8oTpvVlOvTHUDkXCV6o
+    
     - name : Set Helm Env Var
       run : export HELM_EXPERIMENTAL_OCI=1
     - name: Helm Chart Pull
