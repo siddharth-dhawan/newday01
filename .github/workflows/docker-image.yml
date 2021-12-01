@@ -19,7 +19,7 @@ jobs:
 
     steps:
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag inteltrainingacr01.azurecr.io/newday01:5
+      run: docker build . --file Dockerfile --tag inteltrainingacr01.azurecr.io/newday01:$(date +%s)
       
     - name: Azure Container Registry Login  
       uses: Azure/docker-login@v1
@@ -28,7 +28,7 @@ jobs:
         username: 'inteltrainingacr01'
         password: 'gK4eDUg=Tal8q8oTpvVlOvTHUDkXCV6o'  
     - name: Push Image  
-      run: docker push inteltrainingacr01.azurecr.io/newday01:5
+      run: docker push inteltrainingacr01.azurecr.io/newday01:$(date +%s)
       
     - name: Helm tool installer
       uses: Azure/setup-helm@v1
