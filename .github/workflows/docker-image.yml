@@ -23,10 +23,10 @@ jobs:
         login-server: 'inteltrainingacr01.azurecr.io' # default: index.docker.io
         username: 'inteltrainingacr01'
         password: 'gK4eDUg=Tal8q8oTpvVlOvTHUDkXCV6o'
-    - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag inteltrainingacr01.azurecr.io/newday01:1
-    - name: Push Image  
-      run: docker push inteltrainingacr01.azurecr.io/newday01:1
+#     - name: Build the Docker image
+#       run: docker build . --file Dockerfile --tag inteltrainingacr01.azurecr.io/newday01:1
+#     - name: Push Image  
+#       run: docker push inteltrainingacr01.azurecr.io/newday01:1
       
     - name: Helm tool installer
       uses: Azure/setup-helm@v1
