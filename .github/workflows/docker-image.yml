@@ -8,7 +8,7 @@ on:
 env:
   HELM_EXPERIMENTAL_OCI: 1
   HELM_VERSION_TO_INSTALL: 3.5.0
-  ACR_NAME: acrdemoutkarsh
+  ACR_NAME: inteltrainingacr01
   ACR_REPO_NAME: helm/newday01-api
   
 jobs:
@@ -24,9 +24,9 @@ jobs:
         username: 'inteltrainingacr01'
         password: 'gK4eDUg=Tal8q8oTpvVlOvTHUDkXCV6o'
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag inteltrainingacr01.azurecr.io/newday01:1
+      run: docker build . --file Dockerfile --tag inteltrainingacr01.azurecr.io/newday01:5
     - name: Push Image  
-      run: docker push inteltrainingacr01.azurecr.io/newday01:1
+      run: docker push inteltrainingacr01.azurecr.io/newday01:5
       
     - name: Helm tool installer
       uses: Azure/setup-helm@v1
