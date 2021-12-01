@@ -73,8 +73,14 @@ jobs:
     - name: Helm Chart Pull
       run: helm chart pull inteltrainingacr01.azurecr.io/charts-newday01-api:latest
       
+    - name: Helm Chart Move
+      run: helm chart export charts-newday01-api --destination ./install
+      
     - name: Helm Chart Install
-      run: helm upgrade --install --set image.tag=latest charts-newday01-api charts-newday01-api 
+      run: helm upgrade --namespace ns-dev --install --set image.tag=latest ./install/newday01-api
+     
+
+       
      
 #     # ... File omitted
 #     - name: AKS Deployment
