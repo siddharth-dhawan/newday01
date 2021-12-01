@@ -40,7 +40,7 @@ jobs:
       run: helm package ./helm/newday01-api
     - name: save helm chart to local registry
       run: |
-        helm chart save /helm/newday01-api-0.1.0.tgz inteltrainingacr01.azurecr.io/charts-newday01-api
+        helm chart save /home/runner/work/newday01/newday01/newday01-api-0.1.0.tgz inteltrainingacr01.azurecr.io/charts-newday01-api
     - name: Helm Chart Push
       run: helm chart push inteltrainingacr01.azurecr.io/charts-newday01-api:0.1.0
 #   deploy:
