@@ -58,7 +58,9 @@ jobs:
         resource-group: Intel_RG
         # AKS Cluster Name
         cluster-name: sidlabaks01
-        
+    
+    - name : Set Helm Env Var
+      run : export HELM_EXPERIMENTAL_OCI=1
     - name: Helm Chart Pull
       run: helm chart pull inteltrainingacr01.azurecr.io/charts-newday01-api:latest
       
